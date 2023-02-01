@@ -1,0 +1,15 @@
+'pt-BR':
+  activerecord:
+    models:
+      product:
+        one: Produto
+        other: Produtos
+    attributes:
+      product:
+        id: Código
+        description: Descrição
+        price: Valor
+        category: Categoria
+        image_path: Foto do Produto
+        created_at: Criado em
+        updated_at: Atualizado em

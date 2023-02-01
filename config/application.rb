@@ -11,6 +11,9 @@ module CoyoMart
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
+    # i18n
+    config.i18n.default_locale = :'pt-BR'
+
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
@@ -18,5 +21,15 @@ module CoyoMart
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.generators.system_tests = nil
+
+    config.generators do |g|
+      g.test_framework :rspec,
+        fixtures: false,
+        view_specs: false,
+        helper_specs: false,
+        routing_specs: false
+    end
   end
 end
