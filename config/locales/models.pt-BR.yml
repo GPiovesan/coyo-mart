@@ -9,6 +9,7 @@
         id: Código
         description: Descrição
         price: Valor
+        new: Nova
         category: Categoria
         image_path: Foto do Produto
         created_at: Criado em

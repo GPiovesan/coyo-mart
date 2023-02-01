@@ -1,6 +1,10 @@
 <h1>Descrição</h1>
-
+<%=  %>
 <%= form_for @product do |f| %>
     <%= f.label :description %> <br>
     <%= f.text_field :description %>
+
+    <%= f.label :category %> <br>
+    <%= f.select :categories_id, Category.all.collect { |c| [c.category, c.id] } %>
+    
 <% end %>
