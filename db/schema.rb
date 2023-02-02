@@ -18,7 +18,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_013542) do
   end
 
   create_table "measures", force: :cascade do |t|
-    t.string "type"
+    t.string "measure"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -27,10 +27,14 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_01_013542) do
     t.string "description"
     t.decimal "price"
     t.string "image_path"
+    t.integer "in_stock"
+    t.boolean "featured"
     t.integer "categories_id"
+    t.integer "measures_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["categories_id"], name: "index_products_on_categories_id"
+    t.index ["measures_id"], name: "index_products_on_measures_id"
   end
 
 end
