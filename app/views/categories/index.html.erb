@@ -1,14 +1,18 @@
+<% if flash[:notice] %>
+  <p><%= flash[:notice] %></p>
+<% end %>
+
 <p style="color: green"><%= notice %></p>
 
-<h1>Categorias</h1>
+<h1>Listando Categorias</h1>
 
 <div id="categories">
   <% @categories.each do |category| %>
     <%= render category %>
     <p>
-      <%= link_to "Mostrar Categoria", category %>
+      <%= link_to "Exibir", category %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "Nova Categoria", new_category_path %>
+<%= link_to 'Nova Categoria', new_category_path %>

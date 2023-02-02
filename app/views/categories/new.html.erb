@@ -1,9 +1,21 @@
-<h1>New category</h1>
+<h1>Nova categoria</h1>
 
-<%= render "form", category: @category %>
+<% if @category.errors.any? %>
+    <% @category.errors.full_messages.each do |msg| %>
+      <%= msg %>
+    <% end %>
+<% end %>
 
 <br>
 
+<%= form_with model: @category do |form| %>
+    <%= form.label :category %>
+    <%= form.text_field :category %>
+    <br>
+    <%= form.submit %>
+<% end %>
+<br>
+
 <div>
-  <%= link_to "Back to categories", categories_path %>
+  <%= link_to "Voltar para categorias", categories_path %>
 </div>
