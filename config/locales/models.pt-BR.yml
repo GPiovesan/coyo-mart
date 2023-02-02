@@ -4,6 +4,12 @@
       product:
         one: Produto
         other: Produtos
+      category:
+        one: Categoria
+        other: Categorias
+      measure:
+        one: Medida
+        other: Medidas
     attributes:
       product:
         id: Código
@@ -14,3 +20,10 @@
         image_path: Foto do Produto
         created_at: Criado em
         updated_at: Atualizado em
+        measure: Medida
+      category:
+        id: Código
+        category: Categoria
+      measure:
+        id: Código
+        measure: Medida
