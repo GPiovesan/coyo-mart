@@ -21,20 +21,32 @@ feature "Categories", type: :feature do
 
   scenario 'Cadastra uma categoria válida' do
     visit(new_category_path)
-    category_name = Faker::Commerce.department
+    new_category = create(:category)
     
-    fill_in('Categoria', with: category_name)
+    fill_in('Categoria', with: new_category.category)
     click_on('Criar Categoria')
 
     expect(page).to have_content('Categoria cadastrada com sucesso')
-    expect(Category.last.category).to eq(category_name)
+    expect(Category.last.category).to eq(new_category.category)
   end
 
-  scenario 'Cadastra um Produto Inválido' do
+  scenario 'Cadastra uma categoria inválida' do
     visit(new_category_path)
     
     click_on('Criar Categoria')
 
     expect(page).to have_content('Categoria não pode ficar em branco')
+  end
+
+  scenario 'Edita uma categoria' do
+    category = create(:category)
+
+    new_category = Faker::Commerce.department
+    visit(edit_category_url(category.id))
+    fill_in('Categoria', with: new_category)
+    click_on('Atualizar Categoria')
+
+    expect(page).to have_content('Categoria atualizada com sucesso.')
+    expect(page).to have_content(new_category)
   end
 end
