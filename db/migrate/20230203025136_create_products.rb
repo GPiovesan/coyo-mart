@@ -4,10 +4,11 @@ class CreateProducts < ActiveRecord::Migration[7.0]
       t.string :description
       t.decimal :price
       t.string :image_path
-      t.integer :in_stock
+      t.integer :stock_amount
       t.boolean :featured
-      t.belongs_to :categories
-      t.belongs_to :measures
+      t.references :category, null: false, foreign_key: true
+      t.references :measure, null: false, foreign_key: true
+
       t.timestamps
     end
   end
