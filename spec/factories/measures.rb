@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :measure do
-    type { "" }
+    measure { "measure" }
   end
 end

@@ -1,5 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe Measure, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  scenario 'Cria uma medida válida' do
+    measure = create(:measure)
+    expect(measure).to be_valid
+  end
+
+  scenario 'Measure não pode ficar em branco' do
+    measure = build(:measure, measure: nil)
+    measure.valid?
+    expect(measure.errors[:measure]).to include("não pode ficar em branco")
+  end
 end
