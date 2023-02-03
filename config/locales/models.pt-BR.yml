@@ -21,6 +21,8 @@
         created_at: Criado em
         updated_at: Atualizado em
         measure: Medida
+        featured: Destaque
+        stock_amount: Quantidade em Estoque
       category:
         id: Código
         category: Categoria
