@@ -10,27 +10,36 @@ feature "Products", type: :feature do
   scenario 'Verifica Link de Novo Produto' do
     visit(root_path)
     click_on('Produtos')
-    expect(page).to have_content('Listando Produtos')
-    expect(page).to have_link('Novo Produto')
+    expect(page).to have_content('Listando produtos')
+    expect(page).to have_link('Novo produto')
   end
 
   scenario 'Verifica Formulário de Novo Produto' do
     visit(products_path)
-    click_on('Novo Produto')
+    click_on('Novo produto')
     expect(page).to have_content('Descrição')
+    
   end
 
   scenario 'Cadastra um Produto Válido' do
-    visit(new_product_path)
-    product_name = Faker::Commerce.product_name
+    product = create(:product)
     
-    fill_in('Descrição', with: product_name)
-    fill_in('Categoria', with: Faker::Commerce.department)
-    fill_in('Preço', with: Faker::Commerce.price) 
+    visit(new_product_path)
+    fill_in('Descrição', with: product.description)
+    select product.category.category, :from => "product[category_id]"
+    select product.measure.measure, :from => "product[measure_id]"
+    fill_in('Quantidade', with: Faker::Number.number(digits: 2)) 
+    fill_in('Valor', with: Faker::Commerce.price) 
+    
+    fill_in('Foto do Produto', with: "Foto")
+
+    random_boolean = [true, false].sample
+    find(:css, "#product_featured").set(random_boolean)
+    
     click_on('Criar Produto')
 
     expect(page).to have_content('Produto cadastrado com sucesso')
-    expect(Product.last.name).to eq(product_name)
+    expect(Product.last.description).to eq(product.description)
   end
 
   scenario 'Cadastra um Produto Inválido' do

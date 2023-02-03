@@ -8,6 +8,6 @@ feature "Welcome", type: :feature do
 
   scenario 'Exibe o Link Produtos' do
     visit(root_path)
-    expect(find('ul li')).to have_link('Produtos')
+    expect(page).to have_link('Produtos')
   end
 end
