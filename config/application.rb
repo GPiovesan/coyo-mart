@@ -14,6 +14,7 @@ module CoyoMart
     # i18n
     config.i18n.default_locale = :'pt-BR'
 
+    config.serve_static_assets = true
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files

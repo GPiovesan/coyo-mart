@@ -31,7 +31,7 @@ feature "Products", type: :feature do
     fill_in('Quantidade', with: Faker::Number.number(digits: 2)) 
     fill_in('Valor', with: Faker::Commerce.price) 
     
-    fill_in('Foto do Produto', with: "Foto")
+    attach_file("Foto do Produto", Rails.root + "spec/fixtures/computer.png")
 
     random_boolean = [true, false].sample
     find(:css, "#product_featured").set(random_boolean)
