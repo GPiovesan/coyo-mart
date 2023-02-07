@@ -43,6 +43,16 @@ feature "Products", type: :feature do
   end
 
   scenario 'Cadastra um Produto Inválido' do
+    product = create(:product)
     
+    visit(new_product_path)
+    select product.category.category, :from => "product[category_id]"
+    select product.measure.measure, :from => "product[measure_id]"
+    fill_in('Quantidade', with: Faker::Number.number(digits: 2)) 
+    fill_in('Valor', with: Faker::Commerce.price) 
+    
+    click_on('Criar Produto')
+
+    expect(page).to have_content('não pode ficar em branco')
   end
 end
