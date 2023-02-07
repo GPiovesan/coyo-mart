@@ -42,11 +42,20 @@ feature "Categories", type: :feature do
     category = create(:category)
 
     new_category = Faker::Commerce.department
-    visit(edit_category_url(category.id))
+    visit(category_path(category.id))
+    click_link('Editar')
     fill_in('Categoria', with: new_category)
     click_on('Atualizar Categoria')
 
     expect(page).to have_content('Categoria atualizada com sucesso.')
     expect(page).to have_content(new_category)
+  end
+
+  scenario 'Excluindo uma categoria' do
+    category = create(:category)
+    visit(category_path(category.id))
+    expect(page).to have_content('Exibindo Categoria')
+    find(:xpath, "/html/body/div[2]/form[@class='button_to']/button").click
+    expect(page).to have_content('Categoria excluída com sucesso.')
   end
 end

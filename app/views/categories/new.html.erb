@@ -8,12 +8,8 @@
 
 <br>
 
-<%= form_with model: @category do |form| %>
-    <%= form.label :category %>
-    <%= form.text_field :category %>
-    <br>
-    <%= form.submit %>
-<% end %>
+<%= render "form", category: @category %>
+
 <br>
 
 <div>

@@ -4,11 +4,12 @@
 
 <p style="color: green"><%= notice %></p>
 
+<h1>Exibindo Categoria</h1>
+
 <%= render @category %>
 
 <div>
   <%= link_to "Editar", edit_category_path(@category) %> |
   <%= link_to "Voltar", categories_path %>
-
-  <%= button_to "Deletar categoria", @category, method: :delete %>
+  <%= button_to "Deletar categoria", @category, method: :delete%>
 </div>
