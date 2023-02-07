@@ -6,7 +6,7 @@ RSpec.describe Measure, type: :model do
     expect(measure).to be_valid
   end
 
-  scenario 'Measure não pode ficar em branco' do
+  scenario 'Unidade de Medida não pode ficar em branco' do
     measure = build(:measure, measure: nil)
     measure.valid?
     expect(measure.errors[:measure]).to include("não pode ficar em branco")

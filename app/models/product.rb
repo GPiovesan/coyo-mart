@@ -3,5 +3,5 @@ class Product < ApplicationRecord
   belongs_to :measure
   # Active Storage
   has_one_attached :image
-  validates :description, :price, :stock_amount, presence: true
+  validates :description, :price, :image, :stock_amount, presence: true
 end

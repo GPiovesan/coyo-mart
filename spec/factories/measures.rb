@@ -1,5 +1,5 @@
 FactoryBot.define do
   factory :measure do
-    measure { "measure" }
+    measure { "Unidade(UN)" }
   end
 end
