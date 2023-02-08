@@ -28,6 +28,8 @@ gem "stimulus-rails"
 gem "jbuilder"
 
 gem "image_processing"
+
+gem "ransack", "~> 3.2"
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 

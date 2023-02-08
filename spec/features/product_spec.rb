@@ -55,4 +55,15 @@ feature "Products", type: :feature do
 
     expect(page).to have_content('não pode ficar em branco')
   end
+
+  scenario 'Verifica Pesquisa de produtos' do
+    product = create(:product)
+    visit(products_path)
+    expect(page).to have_button('Pesquisar')
+    
+    fill_in('q[description_or_category_category_cont]', with: product.description)
+    click_on('Pesquisar')
+
+    expect(page).to have_content(product.description).and have_content(product.category.category)
+  end
 end
