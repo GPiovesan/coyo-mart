@@ -55,7 +55,7 @@ feature "Categories", type: :feature do
     category = create(:category)
     visit(category_path(category.id))
     expect(page).to have_content('Exibindo Categoria')
-    find(:xpath, "/html/body/div[2]/form[@class='button_to']/button").click
+    find(:xpath, "/html/body/main/div[2]/form[@class='button_to']/button").click
     expect(page).to have_content('Categoria excluída com sucesso.')
   end
 end
