@@ -40,3 +40,61 @@
     float: right;
     padding: 1rem 5rem 0 0;
 }
+
+.product-content {
+    padding: 2rem;    
+}
+
+.product-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    max-width: 50%;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+
+
+.product-form .product-field {
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+}
+
+
+.product-field-75 input {
+    min-width: 75%;
+}
+
+.product-field-50 input {
+    max-width: 50%;
+}
+
+.product-form select {
+    width: 50%;
+}
+
+.product-form-image img {
+    padding-left: 1rem;
+    width: 4.5rem;
+    height: 4.5rem;
+}
+
+.product-form-featured {
+    display: flex;
+    flex-direction: row;
+}
+
+.btn-product-form {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-top: 1rem;
+}
+
+.btn-delete-product {
+    margin-left: 2rem;
+}

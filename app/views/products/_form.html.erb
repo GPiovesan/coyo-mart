@@ -1,7 +1,14 @@
 <%= form_with(model: product) do |form| %>
-  <% if product.errors.any? %>
+  
+  <div class="product-form">
+    
+    <h1>Detalhes do Produto</h1>
+
+    <br>
+
+    <% if product.errors.any? %>
     <div style="color: red">
-      <h2>Atenção: Preencha os campos obrigatórios</h2>
+      <h2>Atenção! Preencha os campos obrigatórios:</h2>
 
       <ul>
         <% product.errors.each do |error| %>
@@ -9,44 +16,50 @@
         <% end %>
       </ul>
     </div>
+
+    <br>
   <% end %>
 
-  <div>
-    <%= form.label :description, style: "display: block" %>
-    <%= form.text_field :description %>
-  </div>
+    <div class="product-field-75">
+      <%= form.label :description, style: "display: block" %>
+      <%= form.text_field :description, class:"product-field" %>
+    </div>
+    
+    <div class="product-form-image">
+      <%= form.label :image, style: "display: block" %>
+      <% if product.image.attached? %>
+        <%= image_tag product.image %>
+      <% else %>
+        <%= form.file_field :image %>
+      <% end %>
+    </div>
 
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
-  </div>
+    <div class="product-field-50">
+      <%= form.label :price, style: "display: block" %>
+      <%= form.text_field :price, class:"product-field" %>
+    </div>
+    
+    <div class="product-field-50">
+      <%= form.label :stock_amount, style: "display: block" %>
+      <%= form.number_field :stock_amount, class:"product-field" %>
+    </div>
+    
+    <div class="product-field-50">
+      <%= form.label :category_id, style: "display: block" %>
+      <%= form.select :category_id, Category.all.collect { |c| [c.category, c.id] }, {}, { class:"product-field" } %>
+    
+      <%= form.label :measure_id, style: "display: block" %>
+      <%= form.select :measure_id, Measure.all.collect { |m| [m.measure, m.id] }, {}, { class:"product-field" } %>
+    </div>
 
-  <div>
-    <%= form.label :image, style: "display: block" %>
-    <%= form.file_field :image %>
-  </div>
+    <div class="product-form-featured">
+      <%= form.label :featured, style: "display: block" %>
+      <%= form.check_box :featured, class:"product-field" %>
+    </div>
 
-  <div>
-    <%= form.label :stock_amount, style: "display: block" %>
-    <%= form.number_field :stock_amount %>
-  </div>
-
-  <div>
-    <%= form.label :featured, style: "display: block" %>
-    <%= form.check_box :featured %>
-  </div>
-
-  <div>
-    <%= form.label :category_id, style: "display: block" %>
-    <%= form.select :category_id, Category.all.collect { |c| [c.category, c.id] } %>
-  </div>
-
-  <div>
-    <%= form.label :measure_id, style: "display: block" %>
-    <%= form.select :measure_id, Measure.all.collect { |m| [m.measure, m.id] } %>
-  </div>
-
-  <div>
-    <%= form.submit %>
+    <div class="btn-product-form">
+      <%= form.submit 'save', class:"btn-save-product" %>
+      <%= form.submit 'delete', class:"btn-delete-product" %>
+    </div>
   </div>
 <% end %>
