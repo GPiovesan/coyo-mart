@@ -13,3 +13,109 @@
  *= require_tree .
  *= require_self
  */
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+body {
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+   padding-left: 12rem;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-start;
+    padding: 2rem;
+    color: #ea515a;
+}
+
+.navbar {
+    position: fixed;
+    width: 12rem;
+    height: 100vh;
+    background-color: #214171;
+}
+
+.navbar-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    
+    align-items: stretch; 
+    height: 100%;
+    background-color: #214171;
+    color: white;
+}
+
+.nav-item {
+    padding: 1rem;
+    margin-bottom: 0.2rem;
+    background-color: #1a3359;    
+}
+
+.nav-link {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .nav-item:hover {
+    background-color: #25487f;
+}
+
+.products {
+    padding: 2rem;
+}
+
+.search-products {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+.search-products h1 {
+    font-size: 1.5rem;
+}
+
+.list-products .show-product {
+    text-decoration: none;
+}
+
+.list-products table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.list-products th, td {
+    border-bottom: 1px solid #e2e2e2;
+    padding: 15px;
+    text-align: center;
+}
+
+.list-products th {
+    background-color: #d9d9d9;
+    border: solid 1px #d9d9d9;
+    border-left: none;
+    border-right: none;
+}
+
+.link-new-product {
+    text-decoration: none;
+    float: right;
+    padding: 1rem 5rem 0 0;
+}

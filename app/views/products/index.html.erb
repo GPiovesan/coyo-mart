@@ -1,40 +1,39 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Listando produtos</h1>
+<div class="products">
+  <div class="search-products">
+    <h1>Listando produtos</h1>
+    <%= search_form_for @q do |f| %>
+      <%= f.search_field :description_or_category_category_cont, placeholder: 'Pesquisa'%>
 
-<div id="search_products">
-  <%= search_form_for @q do |f| %>
-    <%= f.search_field :description_or_category_category_cont, placeholder: 'Pesquisa'%>
-
-    <%= f.check_box :featured_true, {}, 1, nil %>
-    <%= f.label :featured_true, 'Produto em destaque' %>
-    <%= f.submit name: '' %>
-  <% end %>
-</div>
-
-<div id="list_products">
-  <table>
-    <tr>
-      <th>Imagem</th>
-      <th>Descrição</th>
-      <th>Categoria</th>
-      <th>Un</th>
-      <th>Estoque</th>
-      <th>Valor</th>
-      <th></th>
-    </tr>
-  <% @products.each do |product| %>
-    <tr>
-        <td><%= image_tag product.image, style: 'height:50px; width:50px;' %></td>
-        <td><%= product.description %></td>
-        <td><%= product.category.category %></td>
-        <td><%= product.measure.measure %></td>
-        <td><%= product.stock_amount %></td>
-        <td><%= product.price %></td>
-        <td><p><%= link_to "Exibir produto", product %></p>
+      <%= f.check_box :featured_true, {}, 1, nil %>
+      <%= f.label :featured_true, 'Produto em destaque' %>
+      <%= f.submit name: '' %>
+    <% end %>
+  </div>
+  <div class="list-products">
+    <table>
+      <tr>
+        <th>Imagem</th>
+        <th>Descrição</th>
+        <th>Categoria</th>
+        <th>Un</th>
+        <th>Estoque</th>
+        <th>Valor</th>
+        <th></th>
       </tr>
-  <% end %>
-  </table>
+    <% @products.each do |product| %>
+      <tr>
+          <td><%= image_tag product.image, style: 'height:50px; width:50px;' %></td>
+          <td><%= product.description %></td>
+          <td><%= product.category.category %></td>
+          <td><%= product.measure.measure %></td>
+          <td><%= product.stock_amount %></td>
+          <td><%= product.price %></td>
+          <td><p><%= link_to "Exibir produto", product, class:"show-product" %></p>
+        </tr>
+    <% end %>
+    </table>
+    <%= link_to "Novo produto", new_product_path, class:"link-new-product" %>
+  </div>
 </div>
-
-<%= link_to "Novo produto", new_product_path %>
