@@ -2,7 +2,11 @@
   
   <div class="product-form">
     
-    <h1>Detalhes do Produto</h1>
+    <% if product.persisted? %>
+      <h1>Detalhes do Produto</h1>
+    <% else %>
+      <h1>Novo Produto</h1>
+    <% end %>
 
     <br>
 
@@ -12,7 +16,7 @@
 
       <ul>
         <% product.errors.each do |error| %>
-          <li><%= error.full_message %></li>
+          <li style = 'list-style: none'><%= error.full_message %></li>
         <% end %>
       </ul>
     </div>
@@ -27,11 +31,11 @@
     
     <div class="product-form-image">
       <%= form.label :image, style: "display: block" %>
-      <% if product.image.attached? %>
+      <% if product.image.present? %>
         <%= image_tag product.image %>
-      <% else %>
-        <%= form.file_field :image %>
       <% end %>
+      <%= form.file_field :image, style: "display: block" %>
+      
     </div>
 
     <div class="product-field-50">
@@ -53,13 +57,13 @@
     </div>
 
     <div class="product-form-featured">
-      <%= form.label :featured, style: "display: block" %>
-      <%= form.check_box :featured, class:"product-field" %>
+      <%= form.label :featured %>
+      <%= form.check_box :featured%>
     </div>
 
     <div class="btn-product-form">
-      <%= form.submit 'save', class:"btn-save-product" %>
-      <%= form.submit 'delete', class:"btn-delete-product" %>
+      <%= form.submit 'Salvar alterações', class:"btn-save-product" %>
+      <%= form.submit 'Deletar Produto', class:"btn-delete-product" %>
     </div>
   </div>
 <% end %>

@@ -38,13 +38,17 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
-    respond_to do |format|
-      if @product.update(product_params)
-        format.html { redirect_to product_url(@product), notice: "Produto atualizado com sucesso." }
-        format.json { render :show, status: :ok, location: @product }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @product.errors, status: :unprocessable_entity }
+    if params[:commit] == 'delete'
+      destroy
+    else
+      respond_to do |format|
+        if @product.update(product_params)
+          format.html { redirect_to products_path, notice: "Produto atualizado com sucesso." }
+          format.json { render :show, status: :ok, location: @product }
+        else
+          format.html { render :edit, status: :unprocessable_entity }
+          format.json { render json: @product.errors, status: :unprocessable_entity }
+        end
       end
     end
   end

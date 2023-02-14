@@ -17,7 +17,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: sans-serif, Arial, Helvetica;
     font-size: 16px;
 }
 
@@ -29,7 +29,7 @@ body {
 }
 
 main {
-   padding-left: 12rem;
+   padding-left: 14rem;
 }
 
 .logo {
@@ -41,7 +41,7 @@ main {
 
 .navbar {
     position: fixed;
-    width: 12rem;
+    width: 14rem;
     height: 100vh;
     background-color: #214171;
 }

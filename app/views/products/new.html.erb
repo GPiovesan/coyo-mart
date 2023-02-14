@@ -1,9 +1,11 @@
-<h1>Novo Produto</h1>
+<div class="product-content">
+  <%= render "form", product: @product %>
 
-<%= render "form", product: @product %>
+  <br>
 
-<br>
+  <div>
+    <%= link_to "Voltar para Produtos", products_path %>
+  </div>
 
-<div>
-  <%= link_to "Voltar para Produtos", products_path %>
 </div>
+

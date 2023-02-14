@@ -1,7 +1,5 @@
 <%= stylesheet_link_tag "products", "data-turbo-track": "reload" %>
 
-<p style="color: green"><%= notice %></p>
-
 <div class="products">
   <div class="search-products">
     <h1>Listando produtos</h1>
@@ -32,7 +30,7 @@
           <td><%= product.measure.measure %></td>
           <td><%= product.stock_amount %></td>
           <td><%= product.price %></td>
-          <td><p><%= link_to "Exibir produto", product, class:"show-product" %></p>
+          <td><p><%= link_to "Exibir produto", edit_product_path(product), class:"show-product" %></p>
         </tr>
     <% end %>
     </table>
