@@ -27,7 +27,7 @@ class ProductsController < ApplicationController
 
     respond_to do |format|
       if @product.save
-        format.html { redirect_to product_url(@product), notice: "Produto cadastrado com sucesso." }
+        format.html { redirect_to products_path, notice: "Produto cadastrado com sucesso." }
         format.json { render :show, status: :created, location: @product }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
-    if params[:commit] == 'delete'
+    if params[:commit] == 'Deletar Produto'
       destroy
     else
       respond_to do |format|

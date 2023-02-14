@@ -36,7 +36,8 @@ feature "Products", type: :feature do
     random_boolean = [true, false].sample
     find(:css, "#product_featured").set(random_boolean)
     
-    click_on('Criar Produto')
+    print(html)
+    click_on('btn-create-product')
 
     expect(page).to have_content('Produto cadastrado com sucesso')
     expect(Product.last.description).to eq(product.description)
@@ -51,7 +52,7 @@ feature "Products", type: :feature do
     fill_in('Quantidade', with: Faker::Number.number(digits: 2)) 
     fill_in('Valor', with: Faker::Commerce.price) 
     
-    click_on('Criar Produto')
+    click_on('btn-create-product')
 
     expect(page).to have_content('não pode ficar em branco')
   end

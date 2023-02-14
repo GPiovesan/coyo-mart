@@ -94,11 +94,11 @@ RSpec.describe "/products", type: :request do
         expect(Product.last).to eq(product)
       end
 
-      it "redirects to the product" do
+      it "redirects to the product list" do
         product = create(valid_attributes)
         patch product_url(product), params: { product: new_attributes }
         product.reload
-        expect(response).to redirect_to(product_url(product))
+        expect(response).to redirect_to(products_path)
       end
     end
 

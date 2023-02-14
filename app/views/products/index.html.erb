@@ -1,8 +1,11 @@
 <%= stylesheet_link_tag "products", "data-turbo-track": "reload" %>
 
+
+
 <div class="products">
   <div class="search-products">
     <h1>Listando produtos</h1>
+    <p style="color: green"><%= notice %></p>
     <%= search_form_for @q do |f| %>
       <%= f.search_field :description_or_category_category_cont, placeholder: 'Pesquisa'%>
 
