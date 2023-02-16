@@ -36,7 +36,6 @@ feature "Products", type: :feature do
     random_boolean = [true, false].sample
     find(:css, "#product_featured").set(random_boolean)
     
-    print(html)
     click_on('btn-create-product')
 
     expect(page).to have_content('Produto cadastrado com sucesso')
