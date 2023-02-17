@@ -1,14 +1,48 @@
-<h1>Dashboard</h1>
+<!-- Header -->  
+  <div class="header-container">
+    <div class="header-container">
+      <h1>Dashboard</h1>
+    </div>
+  </div>
+
+<!-- Informações do Dashboard -->
 <div class="info">
   <div class="info-box">
-    <h2>Produtos Cadastrados</h2>
-    <%= @products.count %>
+    <div class="info-box-content">
+      <h1>Produtos Cadastrados</h1>
+      <p class="info-counter">
+        <%= @products.count %>
+      </p>
+    </div>
+    <div class="info-img">
+      <%= image_tag "product.png" %>
+    </div>
   </div>
   <div class="info-box">
-    <h2>Número de Clientes</h2>
-    <h1>20</h1>
+    <div class="info-box-content">
+      <h1>Número de Clientes</h1>
+      <p class="info-counter">20</p>
+    </div>
+    <div>
+      <%= image_tag "customer.png"%>
+    </div>
   </div>
 </div>
-<ul>
-    
-</ul>
+
+<div class="content">
+  <!-- Tabela de produtos -->
+  <div class="products">
+    <div class="search-products">
+      <h1>Listagem de Produtos em Destaque</h1>
+      <p style="color: green"><%= notice %></p>
+      <%= search_form_for @q do |f| %>
+        <%= f.search_field :description_or_category_category_cont, placeholder: 'Pesquisa' %>
+        <%= f.submit name: '' %>
+      <% end %>
+    </div>
+    <div class="list-products">
+      <% @products = Product.where(featured: true)%>
+      <%= render "products/products-table" %>
+    </div>
+  </div>
+</div>

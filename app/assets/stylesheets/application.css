@@ -28,8 +28,29 @@ body {
     padding: 0;
 }
 
+.header-container {
+    padding-top: 0.7rem;
+    padding-bottom: 0.5rem;
+    padding-left: 2rem;
+    background-color: #d9d9d9;
+} 
+
+.header-container h1 {
+    color: white;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 25px;
+}
+
 main {
-   padding-left: 14rem;
+   padding-left: 14rem;  
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+    padding-top: 0.5rem;
 }
 
 .logo {
