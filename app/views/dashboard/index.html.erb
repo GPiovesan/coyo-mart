@@ -40,9 +40,8 @@
         <%= f.submit name: '' %>
       <% end %>
     </div>
-    <div class="list-products">
-      <% @products = Product.where(featured: true)%>
-      <%= render "products/products-table" %>
-    </div>
+    <% @products = Product.where(featured: true)%>
+    
+    <%= render "products/products-table" %>
   </div>
 </div>

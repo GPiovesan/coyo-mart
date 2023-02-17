@@ -13,9 +13,9 @@
         <%= f.submit name: '' %>
       <% end %>
     </div>
-    <div class="list-products">
-      <%= render "products-table", product: @product %>
-      <%= link_to "Novo produto", new_product_path, class:"link-new-product" %>
-    </div>
+    
+    <%= render "products-table", product: @product %>
+    <%= link_to "Novo produto", new_product_path, class:"link-new-product" %>
+    
   </div>
 </div>
