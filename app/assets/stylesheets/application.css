@@ -14,6 +14,14 @@
  *= require_self
  */
 
+:root {
+    --main-blue-color: #214171;
+    --logo-color: #ea515a;
+    --box-shadow-color: rgba(100, 100, 111, 0.2);
+    --btn-default-color: #214171;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -57,14 +65,14 @@ main {
     display: flex;
     justify-content: flex-start;
     padding: 2rem;
-    color: #ea515a;
+    color: var(--logo-color);
 }
 
 .navbar {
     position: fixed;
     width: 14rem;
     height: 100vh;
-    background-color: #214171;
+    background-color: var(--main-blue-color);
 }
 
 .navbar-nav {
@@ -76,7 +84,7 @@ main {
     
     align-items: stretch; 
     height: 100%;
-    background-color: #214171;
+    background-color: var(--main-blue-color);
     color: white;
 }
 

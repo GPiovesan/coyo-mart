@@ -1,6 +1,6 @@
 .products {
     padding: 2rem;
-    box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--box-shadow-color) 0px 0px 16px;
     border-radius: 8px;
 }
 
@@ -53,7 +53,7 @@
     flex-direction: column;
     justify-content: flex-start;
     max-width: 50%;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    box-shadow: var(--box-shadow-color) 0px 7px 29px 0px;
     border-radius: 15px;
     padding: 1rem;
 }
@@ -110,15 +110,15 @@
 
 .btn-delete-product {
     margin-left: 2rem;
-    color: #214171;
+    color: var(--main-blue-color);
     background-color: white;
-    border: 2px solid #214171;
+    border: 2px solid  var(--main-blue-color);
 }
 
 .btn-save-product {
-   background-color: #214171;
+   background-color: var(--main-blue-color);
    color: white;
-   border: 2px solid #214171;
+   border: 2px solid var(--main-blue-color);
 }
 
 .btn-delete-product:hover {
