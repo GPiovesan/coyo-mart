@@ -16,8 +16,9 @@
     font-weight: normal;
 }
 
-.list-table-default td {
+.categories .list-table-default td:nth-child(1) {  
     text-align: left;
+    padding-left: 5rem;
 }
 
 .link-new-categories {

@@ -40,6 +40,14 @@
     border-right: none;
 }
 
+.list-table-default td:nth-child(1) {  
+    text-align: center;
+}
+
+.list-table-default tr:nth-child(odd) {
+    background-color: lightgray
+}
+
 .link-new-product {
     text-decoration: none;
     float: right;
