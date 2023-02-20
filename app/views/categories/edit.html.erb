@@ -1,19 +1,16 @@
-<% if @category.errors.any? %>
-  <ul>
-    <% @category.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
+<!-- Header -->  
+<div class="header-container">
+  <div class="header-container">
+    <h1>Categorias</h1>
+  </div>
+</div>
 
+<div class="category-content">
+  <%= render "form", category: @category %>
+  
+  <br>
 
-<h1>Editando categoria</h1>
-
-<%= render "form", category: @category %>
-
-<br>
-
-<div>
-  <%= link_to "Exibir categoria", @category %> |
-  <%= link_to "Voltar", categories_path %>
+  <div>
+    <%= link_to "Voltar para categorias", categories_path %>
+  </div>  
 </div>

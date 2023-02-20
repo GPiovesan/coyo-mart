@@ -1,0 +1,14 @@
+<div class="list-table-default">
+    <table>
+        <tr>
+            <th>Categoria</th>
+            <th></th>
+        </tr>
+        <% @categories.each do |category| %>
+        <tr>
+            <td><%= category.category %></td>
+            <td><p><%= link_to "Exibir categoria", edit_category_path(category), class:"show-category" %></p>
+        </tr>
+        <% end %>
+    </table>
+</div>

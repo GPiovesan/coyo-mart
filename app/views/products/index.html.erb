@@ -1,8 +1,16 @@
 <%= stylesheet_link_tag "products", "data-turbo-track": "reload" %>
 
+<!-- Header -->  
+<div class="header-container">
+  <div class="header-container">
+    <h1>Produtos</h1>
+  </div>
+</div>
+
 <div class="content">
   <div class="products">
-    <div class="search-products">
+    <div class="search">
+
       <h1>Listando produtos</h1>
       <p style="color: green"><%= notice %></p>
       <%= search_form_for @q do |f| %>

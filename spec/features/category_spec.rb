@@ -15,16 +15,17 @@ feature "Categories", type: :feature do
 
   scenario 'Formulário de Nova Categoria' do
     visit(categories_path)
-    click_link('Nova Categoria')
-    expect(page).to have_button('Criar Categoria')
+    click_on('Nova Categoria')
+    expect(page).to have_content('Nova Categoria')
   end
 
   scenario 'Cadastra uma categoria válida' do
-    visit(new_category_path)
     new_category = create(:category)
     
+    visit(new_category_path)
     fill_in('Categoria', with: new_category.category)
-    click_on('Criar Categoria')
+
+    click_on('btn-create-product')
 
     expect(page).to have_content('Categoria cadastrada com sucesso')
     expect(Category.last.category).to eq(new_category.category)
@@ -33,7 +34,7 @@ feature "Categories", type: :feature do
   scenario 'Cadastra uma categoria inválida' do
     visit(new_category_path)
     
-    click_on('Criar Categoria')
+    click_on('btn-create-product')
 
     expect(page).to have_content('Categoria não pode ficar em branco')
   end
@@ -45,7 +46,8 @@ feature "Categories", type: :feature do
     visit(category_path(category.id))
     click_link('Editar')
     fill_in('Categoria', with: new_category)
-    click_on('Atualizar Categoria')
+
+    click_on('btn-save-product')
 
     expect(page).to have_content('Categoria atualizada com sucesso.')
     expect(page).to have_content(new_category)

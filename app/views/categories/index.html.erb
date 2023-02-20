@@ -1,18 +1,26 @@
-<% if flash[:notice] %>
-  <p><%= flash[:notice] %></p>
-<% end %>
+<%= stylesheet_link_tag "category", "data-turbo-track": "reload" %>
 
-<p style="color: green"><%= notice %></p>
-
-<h1>Listando Categorias</h1>
-
-<div id="categories">
-  <% @categories.each do |category| %>
-    <%= render category %>
-    <p>
-      <%= link_to "Exibir", category %>
-    </p>
-  <% end %>
+<!-- Header -->  
+<div class="header-container">
+  <div class="header-container">
+    <h1>Categorias</h1>
+  </div>
 </div>
 
-<%= link_to 'Nova Categoria', new_category_path %>
+<div class="content">
+  <div class="categories">
+    <div class="search">
+    <h1>Listando Categorias</h1>
+    <p style="color: green"><%= notice %></p>
+      <%= search_form_for @q do |f| %>
+        <%= f.search_field :category_cont, placeholder: 'Pesquisa' %>
+        <%= f.submit name: '' %>
+      <% end %>
+    </div>
+
+    <%= render "categories-table", caregory: @categories %>
+    <%= link_to 'Nova Categoria', new_category_path, class:"link-new-categories" %>
+
+  </div>
+</div>
+

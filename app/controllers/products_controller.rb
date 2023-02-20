@@ -38,7 +38,7 @@ class ProductsController < ApplicationController
 
   # PATCH/PUT /products/1 or /products/1.json
   def update
-    if params[:commit] == 'Deletar Produto'
+    if params[:commit] == 'Deletar produto'
       destroy
     else
       respond_to do |format|

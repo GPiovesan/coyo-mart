@@ -4,34 +4,34 @@
     border-radius: 8px;
 }
 
-.search-products {
+.search {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem;
 }
 
-.search-products h1 {
+.search h1 {
     font-size: 1.5rem;
 }
 
-.list-products .show-product {
+.list-table-default .show-product {
     text-decoration: none;
 }
 
-.list-products table {
+.list-table-default table {
     width: 100%;
     border-collapse: collapse;
 }
 
-.list-products th, td {
+.list-table-default th, td {
     border-bottom: 1px solid #e2e2e2;
     padding: 15px;
     text-align: center;
     font-size: 1rem;
 }
 
-.list-products th {
+.list-table-default th {
     background-color: #d9d9d9;
     border: solid 1px #d9d9d9;
     border-left: none;
