@@ -10,7 +10,7 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>      
+  <body>
       <div class="navbar">
 
         <h1 class="logo">COYOmart</h1>
@@ -29,7 +29,22 @@
       </div>
 
       <main>
+        <!-- Header -->  
+        <div class="header-container">
+          <div class="header-container">
+            <% path = request.fullpath -%>
+            <% if path.include? "products" %>
+              <h1>Produtos</h1>
+            <% elsif path.include? "categories" %>
+              <h1>Categorias</h1>
+            <% else %>
+              <h1>Dashboard</h1>
+            <% end %>
+          </div>
+        </div>
+
         <%= yield %>
+
       </main>
   </body>
 </html>

@@ -30,7 +30,7 @@
   <div class="btn-category-form">
     <% if category.persisted? %>
       <%= form.submit 'Salvar alterações', class:"btn-save-category", id:"btn-save-product" %>
-      <%= form.submit 'Deletar categoria', class:"btn-delete-category" %>
+      <%= form.submit 'Deletar categoria', class:"btn-delete-category", id:"btn-delete-category" %>
     <% else %>
       <%= form.submit 'Criar categoria', class:"btn-save-category", id:"btn-create-product"%>
     <% end %>

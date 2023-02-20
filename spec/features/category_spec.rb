@@ -55,9 +55,9 @@ feature "Categories", type: :feature do
 
   scenario 'Excluindo uma categoria' do
     category = create(:category)
-    visit(category_path(category.id))
-    expect(page).to have_content('Exibindo Categoria')
-    find(:xpath, "/html/body/main/div[2]/form[@class='button_to']/button").click
+    visit(edit_category_path(category.id))
+    expect(page).to have_content('Detalhes da Categoria')
+    click_on("btn-delete-category")
     expect(page).to have_content('Categoria excluída com sucesso.')
   end
 end
