@@ -9,6 +9,11 @@
     width: 62px;
 }
 
+.dashboard .products {
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+}
+
 .info-box {
     display: flex;
     flex-direction: row;

@@ -19,6 +19,8 @@
     --logo-color: #ea515a;
     --box-shadow-color: rgba(100, 100, 111, 0.2);
     --btn-default-color: #214171;
+    --header-default-color: var(--main-blue-color);
+    --header-default-text-color: var(--logo-color);
 }
 
 
@@ -37,39 +39,41 @@ body {
 }
 
 .header-container {
-    padding-top: 0.7rem;
-    padding-bottom: 0.5rem;
-    padding-left: 2rem;
-    background-color: #d9d9d9;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: var(--header-default-color);
+    position: fixed;
+    width: 100%;
 } 
 
 .header-container h1 {
-    color: white;
+    color: var(--header-default-text-color);
     font-style: normal;
-    font-weight: bold;
     font-size: 25px;
+    padding: 2rem;
+    padding-right: 5rem;
+}
+
+.logo {
+    color: var(--logo-color);
 }
 
 main {
-   padding-left: 14rem;  
+   padding-top: 6rem;
+   padding-left: 14rem;
 }
 
 .content {
     display: flex;
     flex-direction: column;
     padding: 2rem;
-    padding-top: 0.5rem;
-}
-
-.logo {
-    display: flex;
-    justify-content: flex-start;
-    padding: 2rem;
-    color: var(--logo-color);
+    padding-top: 0.1rem;
 }
 
 .navbar {
     position: fixed;
+    margin-top: 5.8rem;
     width: 14rem;
     height: 100vh;
     background-color: var(--main-blue-color);

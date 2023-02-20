@@ -11,10 +11,20 @@
   </head>
 
   <body>
-      <div class="navbar">
-
+      <!-- Header -->  
+      <div class="header-container">
         <h1 class="logo">COYOmart</h1>
+        <% path = request.fullpath -%>
+        <% if path.include? "products" %>
+          <h1>PRODUTOS</h1>
+        <% elsif path.include? "categories" %>
+          <h1>CATEGORIAS</h1>
+        <% else %>
+          <h1>DASHBOARD</h1>
+        <% end %>
+      </div>
 
+      <div class="navbar">
         <ul class="navbar-nav">
           <li class="nav-item">
             <%= link_to "Dashboard", root_path, class: "nav-link" %>        
@@ -29,19 +39,7 @@
       </div>
 
       <main>
-        <!-- Header -->  
-        <div class="header-container">
-          <div class="header-container">
-            <% path = request.fullpath -%>
-            <% if path.include? "products" %>
-              <h1>Produtos</h1>
-            <% elsif path.include? "categories" %>
-              <h1>Categorias</h1>
-            <% else %>
-              <h1>Dashboard</h1>
-            <% end %>
-          </div>
-        </div>
+        
 
         <%= yield %>
 

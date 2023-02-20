@@ -1,5 +1,7 @@
 .categories {
     padding: 2rem;
+    padding-top: 1rem;
+    margin-top: 2rem;
     box-shadow: var(--box-shadow-color) 0px 0px 16px;
     border-radius: 8px;
     max-width: 75%;
@@ -7,6 +9,11 @@
 
 .category-content {
     padding: 2rem;
+}
+
+.search h1 {
+    font-size: 1.5rem;
+    font-weight: normal;
 }
 
 .list-table-default td {

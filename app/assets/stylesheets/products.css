@@ -1,5 +1,7 @@
 .products {
     padding: 2rem;
+    padding-top: 1rem;
+    margin-top: 2rem;
     box-shadow: var(--box-shadow-color) 0px 0px 16px;
     border-radius: 8px;
 }
