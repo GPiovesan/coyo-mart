@@ -4,7 +4,7 @@
     <div class="info-box-content">
       <h1>Produtos Cadastrados</h1>
       <p class="info-counter">
-        <%= @products.count %>
+        <%= @products_cont.count %>
       </p>
     </div>
     <div class="info-img">
@@ -34,8 +34,6 @@
           <%= f.submit name: '' %>
         <% end %>
       </div>
-      <% @products = Product.where(featured: true)%>
-      
       <%= render "products/products-table" %>
     </div>
   </div>

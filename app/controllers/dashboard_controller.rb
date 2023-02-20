@@ -1,7 +1,8 @@
 class DashboardController < ApplicationController
     def index
-        #@products = Product.all
+        @products_cont = Product.all
+        
         @q = Product.ransack(params[:q])
-        @products = @q.result(distinct: true)
+        @products = @q.result(distinct: true).where("featured = ?", true)
     end
 end

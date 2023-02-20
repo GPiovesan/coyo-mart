@@ -6,7 +6,7 @@
             <th>Categoria</th>
             <th>Un</th>
             <th>Estoque</th>
-            <th>Valor</th>
+            <th><%= sort_link(@q, :price, "Valor", default_order: :asc) %></th>
             <th></th>
         </tr>
         <% @products.each do |product| %>
