@@ -39,7 +39,13 @@ class CategoriesController < ApplicationController
   # PATCH/PUT /categories/1 or /categories/1.json
   def update
     if params[:commit] == 'Deletar categoria'
-      destroy
+      if Product.where("category_id = ?", params[:id]).limit(1).exists?
+        respond_to do |format|
+          format.html { redirect_to categories_path, notice: "Impossível deletar categoria em uso." }    
+        end
+      else
+        destroy
+      end
     else
       respond_to do |format|
         if @category.update(category_params)
