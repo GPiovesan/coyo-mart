@@ -60,4 +60,14 @@ feature "Categories", type: :feature do
     click_on("btn-delete-category")
     expect(page).to have_content('Categoria excluída com sucesso.')
   end
+
+  scenario 'Excluindo uma categoria em utilização' do
+    category = create(:category)
+    product = create(:product, category: category)
+
+    visit(edit_category_path(category.id))
+    expect(page).to have_content('Detalhes da Categoria')
+    click_on("btn-delete-category")
+    expect(page).to have_content('Impossível deletar categoria em uso.')
+  end
 end
